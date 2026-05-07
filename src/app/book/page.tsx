@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import BookingClient from "./BookingClient";
+import BookPageClient from "./BookPageClient";
 
 export const metadata: Metadata = {
-  title: "Book a Cab | Sezo Cabz",
+  title: "Book a Cab & Driver Registration | Sezo Cabz",
   description:
-    "Book a premium cab instantly in Kerala. Airport pickup, local rides, and outstation travel with professional chauffeurs. Confirm via WhatsApp.",
+    "Book a premium cab or register as a driver with Sezo Cabz. Instant WhatsApp confirmation.",
 };
 
 export default function BookPage() {
-  return <BookingClient />;
+  return <BookPageClient />;
 }

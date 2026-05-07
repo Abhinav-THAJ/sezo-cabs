@@ -52,7 +52,6 @@ function calculateFare(distanceKm: number, vehicle: VehicleType, rideType: RideT
 }
 
 export default function BookingClient() {
-  const [step, setStep] = useState(1);
   const [rideType, setRideType] = useState<RideType>("Airport Pickup");
   const [vehicle, setVehicle] = useState<VehicleType>("Sedan");
   const [pickup, setPickup] = useState("");
@@ -88,21 +87,7 @@ export default function BookingClient() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f9f7f4] pt-32 pb-24">
-      <div className="container mx-auto px-4 md:px-8 max-w-6xl">
-
-        {/* Header */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-14">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#d4af37]/10 text-[#d4af37] text-xs font-semibold uppercase tracking-widest mb-4">
-            Instant Booking
-          </span>
-          <h1 className="text-4xl md:text-6xl font-bold font-heading mb-4">Book Your Ride</h1>
-          <p className="text-gray-500 text-lg max-w-xl mx-auto">
-            Fill in your trip details and confirm instantly via WhatsApp.
-          </p>
-        </motion.div>
-
-        <form onSubmit={handleBook}>
+    <form onSubmit={handleBook}>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
 
             {/* ── Left: Form ── */}
@@ -300,7 +285,5 @@ export default function BookingClient() {
 
           </div>
         </form>
-      </div>
-    </div>
   );
 }
