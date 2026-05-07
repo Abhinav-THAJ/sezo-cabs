@@ -57,7 +57,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/services#calculator"
+            href="/book"
             className="bg-gold text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gold/90 transition-colors shadow-[0_4px_14px_0_rgba(212,175,55,0.39)]"
           >
             Book Now
@@ -98,7 +98,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="/services#calculator"
+                href="/book"
                 onClick={() => setMobileMenuOpen(false)}
                 className="bg-gold text-white px-6 py-3 rounded-xl text-center font-medium mt-4"
               >
