@@ -1,5 +1,4 @@
 import Image from "next/image";
-import FareCalculator from "@/components/calculator/FareCalculator";
 
 export default function ServicesPage() {
   return (
@@ -17,10 +16,7 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        {/* Dynamic Calculator Section */}
-        <div className="mb-32">
-          <FareCalculator />
-        </div>
+
 
         {/* Detailed Services */}
         <div className="space-y-32">

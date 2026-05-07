@@ -94,7 +94,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4"
         >
           <Link
-            href="/services#calculator"
+            href="/book"
             className="group relative inline-flex items-center justify-center px-8 py-4 text-sm font-semibold text-black bg-white rounded-full overflow-hidden transition-transform hover:scale-105"
           >
             <span className="relative z-10">Book a Cab</span>
