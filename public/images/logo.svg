@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 72" fill="none">
+  <!-- Car icon -->
+  <g transform="translate(0, 10)">
+    <!-- Car body -->
+    <path d="M10 34 L16 20 Q18 16 22 16 L46 16 Q50 16 52 20 L58 34 L62 34 Q65 34 65 37 L65 44 Q65 47 62 47 L58 47 Q57 51 53 51 Q49 51 48 47 L20 47 Q19 51 15 51 Q11 51 10 47 L8 47 Q5 47 5 44 L5 37 Q5 34 8 34 Z" fill="#C9A84C"/>
+    <!-- Windshield -->
+    <path d="M17 33 L22 20 L46 20 L51 33 Z" fill="#1a1a1a" opacity="0.6"/>
+    <!-- Side window -->
+    <path d="M17 33 L34 33 L34 20 L22 20 Z" fill="#2a2a2a" opacity="0.5"/>
+    <!-- Wheels -->
+    <circle cx="15" cy="48" r="6" fill="#1a1a1a"/>
+    <circle cx="15" cy="48" r="3" fill="#C9A84C"/>
+    <circle cx="53" cy="48" r="6" fill="#1a1a1a"/>
+    <circle cx="53" cy="48" r="3" fill="#C9A84C"/>
+    <!-- Headlight -->
+    <rect x="58" y="36" width="5" height="3" rx="1" fill="#fff" opacity="0.9"/>
+    <!-- Tail light -->
+    <rect x="5" y="36" width="4" height="3" rx="1" fill="#C9A84C" opacity="0.9"/>
+  </g>
+
+  <!-- Brand name -->
+  <text x="82" y="38" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="700" letter-spacing="3" fill="#1a1a1a">SEZO</text>
+  <text x="82" y="60" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="400" letter-spacing="6" fill="#C9A84C">CABZ</text>
+
+  <!-- Thin gold divider -->
+  <line x1="82" y1="43" x2="258" y2="43" stroke="#C9A84C" stroke-width="0.8" opacity="0.5"/>
+</svg>

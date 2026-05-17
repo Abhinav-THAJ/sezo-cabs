@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 
@@ -8,7 +9,13 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-1">
-            <h2 className="text-2xl font-bold font-heading mb-6">Sezo Cabz</h2>
+            <Image
+              src="/images/logo.svg"
+              alt="Sezo Cabz Logo"
+              width={160}
+              height={45}
+              className="brightness-0 invert mb-6"
+            />
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Experience the pinnacle of luxury travel in Kerala. Premium cabs, professional drivers, and unforgettable journeys.
             </p>

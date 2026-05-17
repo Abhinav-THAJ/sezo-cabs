@@ -1,105 +1,221 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import { MapPin, Clock, ChevronRight, Heart, Leaf, Mountain, Compass, Globe } from "lucide-react";
+import { tourPackages, type TourPackage } from "./tourData";
+import PackageDetailModal from "./PackageDetailModal";
 
-const packages = [
-  {
-    id: "munnar",
-    title: "Munnar Tea Gardens",
-    duration: "3 Days / 2 Nights",
-    price: "From ₹8,500",
-    image: "/images/hero_kerala.png",
-  },
-  {
-    id: "alleppey",
-    title: "Alleppey Houseboat",
-    duration: "2 Days / 1 Night",
-    price: "From ₹6,500",
-    image: "/images/kerala_houseboat.png",
-  },
-];
+const icons = [Heart, Leaf, Mountain, Compass, Globe];
 
 export default function PackagesOverview() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
-  return (
-    <section className="py-32 bg-white relative overflow-hidden" ref={containerRef}>
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.span 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-gold font-semibold uppercase tracking-wider text-sm mb-4 block"
-          >
-            Curated Experiences
-          </motion.span>
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold font-heading mb-6"
-          >
-            Discover Kerala With Our Premium Packages
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-gray-600 text-lg"
-          >
-            Immerse yourself in the breathtaking landscapes of God's Own Country with our handcrafted, luxury travel packages.
-          </motion.p>
-        </div>
+  const [selectedPkg, setSelectedPkg] = useState<TourPackage | null>(null);
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {packages.map((pkg, index) => (
-            <motion.div
-              key={pkg.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+  return (
+    <>
+      <section className="py-28 bg-white relative overflow-hidden" ref={containerRef}>
+        {/* Subtle background pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, #b8960c 1px, transparent 0)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+
+        <div className="container mx-auto px-4 md:px-8 relative">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <motion.span
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group relative rounded-3xl overflow-hidden h-[400px] shadow-lg"
+              className="inline-block font-bold uppercase tracking-widest text-xs mb-4"
+              style={{ color: "#b8960c" }}
             >
-              <Image
-                src={pkg.image}
-                alt={pkg.title}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-              
-              <div className="absolute inset-x-0 bottom-0 p-8">
-                <div className="flex justify-between items-end">
-                  <div>
-                    <span className="text-gold/90 text-sm font-medium mb-2 block">{pkg.duration}</span>
-                    <h3 className="text-3xl font-bold text-white font-heading">{pkg.title}</h3>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-white/80 text-sm block mb-1">Starting from</span>
-                    <span className="text-xl font-bold text-white">{pkg.price}</span>
-                  </div>
-                </div>
-                
-                <div className="mt-6 overflow-hidden">
-                  <Link 
-                    href="/services" 
-                    className="inline-block bg-white text-black px-6 py-3 rounded-full text-sm font-semibold transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
-                  >
-                    View Itinerary
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
+              ✦ Curated Kerala Experiences
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.08 }}
+              className="text-4xl md:text-5xl font-bold font-heading text-gray-900 mb-5 leading-tight"
+            >
+              Discover Kerala With Our <br />
+              <span style={{ color: "#b8960c" }}>Premium Packages</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.14 }}
+              className="text-gray-500 text-lg leading-relaxed"
+            >
+              Handcrafted journeys through God's Own Country — from misty hill stations
+              to serene backwaters and golden beaches.
+            </motion.p>
+          </div>
+
+          {/* Cards Grid — 3 top + 2 bottom centred */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-7">
+            {tourPackages.slice(0, 3).map((pkg, i) => {
+              const Icon = icons[i];
+              return (
+                <PackageCard
+                  key={pkg.id}
+                  pkg={pkg}
+                  icon={<Icon className="w-4 h-4" />}
+                  index={i}
+                  onClick={() => setSelectedPkg(pkg)}
+                />
+              );
+            })}
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 max-w-2xl lg:max-w-[calc(66.666%+14px)] mx-auto lg:mx-0 lg:ml-auto lg:mr-auto">
+            {tourPackages.slice(3).map((pkg, i) => {
+              const Icon = icons[3 + i];
+              return (
+                <PackageCard
+                  key={pkg.id}
+                  pkg={pkg}
+                  icon={<Icon className="w-4 h-4" />}
+                  index={3 + i}
+                  onClick={() => setSelectedPkg(pkg)}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <PackageDetailModal pkg={selectedPkg} onClose={() => setSelectedPkg(null)} />
+    </>
+  );
+}
+
+// ─── Single Card ────────────────────────────────────────────────────────────
+
+function PackageCard({
+  pkg,
+  icon,
+  index,
+  onClick,
+}: {
+  pkg: TourPackage;
+  icon: React.ReactNode;
+  index: number;
+  onClick: () => void;
+}) {
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.07, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="group flex flex-col rounded-[24px] overflow-hidden cursor-pointer bg-white"
+      style={{
+        boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
+        border: "1px solid #ede9df",
+      }}
+      whileHover={{
+        y: -5,
+        boxShadow: "0 12px 40px rgba(0,0,0,0.14)",
+        transition: { duration: 0.3 },
+      }}
+      onClick={onClick}
+    >
+      {/* Image */}
+      <div className="relative h-52 overflow-hidden flex-shrink-0">
+        <Image
+          src={pkg.image}
+          alt={pkg.title}
+          fill
+          className="object-cover transition-transform duration-900 group-hover:scale-107"
+          style={{ transition: "transform 0.9s cubic-bezier(0.16,1,0.3,1)" }}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          loading="lazy"
+        />
+        {/* Gradient */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 55%, transparent 100%)",
+          }}
+        />
+        {/* Duration pill */}
+        <div
+          className="absolute bottom-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs text-white font-medium"
+          style={{ background: "rgba(0,0,0,0.52)", backdropFilter: "blur(6px)" }}
+        >
+          <Clock className="w-3 h-3" />
+          {pkg.duration}
+        </div>
+        {/* Badge */}
+        {pkg.badge && (
+          <div
+            className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase"
+            style={{ background: "linear-gradient(135deg,#d4af37,#f3e5ab)", color: "#4a3800" }}
+          >
+            {pkg.badge}
+          </div>
+        )}
+      </div>
+
+      {/* Body */}
+      <div className="flex flex-col flex-1 p-5">
+        {/* Destinations */}
+        <div className="flex flex-wrap gap-1.5 mb-3">
+          {pkg.destinations.slice(0, 3).map((d) => (
+            <span
+              key={d}
+              className="flex items-center gap-1 text-xs px-2.5 py-1 rounded-full font-medium"
+              style={{ background: "#fdf7e6", color: "#9a7400", border: "1px solid #f0d97a" }}
+            >
+              <MapPin className="w-2.5 h-2.5" />
+              {d}
+            </span>
           ))}
         </div>
+
+        {/* Title & tagline */}
+        <h3 className="text-lg font-bold text-gray-900 font-heading mb-1 leading-snug">
+          {pkg.title}
+        </h3>
+        <p className="text-xs text-gray-400 italic mb-3">{pkg.tagline}</p>
+
+        {/* Description */}
+        <p className="text-sm text-gray-500 leading-relaxed mb-5 flex-1 line-clamp-2">
+          {pkg.description}
+        </p>
+
+        {/* Card footer */}
+        <div
+          className="flex items-center justify-between pt-4"
+          style={{ borderTop: "1px solid #f0ece4" }}
+        >
+          <div className="flex items-center gap-1.5 text-xs text-gray-400">
+            <span
+              className="w-6 h-6 rounded-full flex items-center justify-center"
+              style={{ background: "#fdf7e6", color: "#b8960c" }}
+            >
+              {icon}
+            </span>
+            <span className="font-medium text-gray-500">{pkg.duration}</span>
+          </div>
+          <button
+            className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-300 group-hover:gap-2.5"
+            style={{ background: "linear-gradient(135deg,#d4af37,#b8960c)", color: "#fff" }}
+          >
+            Explore
+            <ChevronRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+          </button>
+        </div>
       </div>
-    </section>
+    </motion.article>
   );
 }

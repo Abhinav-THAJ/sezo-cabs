@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Our Services",
+  description:
+    "Explore Sezo Cabz's premium services: airport transfers at Kochi, Trivandrum & Calicut, local city rides, Kerala tour packages, outstation travel, corporate & medical transport.",
+  alternates: { canonical: "https://www.sezocabz.com/services" },
+  openGraph: {
+    title: "Premium Cab Services in Kerala | Sezo Cabz",
+    description: "Airport transfers, local rides, Kerala tour packages, outstation & corporate travel — all with professional chauffeurs.",
+    url: "https://www.sezocabz.com/services",
+    images: [{ url: "/images/airport_pickup.png", width: 1200, height: 630, alt: "Sezo Cabz Services" }],
+  },
+};
 
 const services = [
   {
@@ -39,16 +54,30 @@ const services = [
     reverse: false
   },
   {
-    title: "Weddings & Events",
-    description: "Make your special day even more memorable with our luxury wedding fleet. We provide elegantly decorated premium cars for the couple and high-capacity luxury coaches for guests. Our professional team coordinates every detail to ensure seamless event logistics.",
-    image: "/images/wedding_car.png",
-    features: ["Elegantly decorated premium cars", "Guest shuttle coordination", "Uniformed professional chauffeurs", "Flexible package pricing"],
+    title: "Medical Tourism",
+    description: "Travel with peace of mind for your healthcare needs. We offer comfortable, sanitized, and spacious vehicles for patients and their families. Our compassionate chauffeurs are trained to ensure a smooth, stress-free journey to and from medical facilities.",
+    image: "/images/medical_tourism.png",
+    features: ["Sanitized, spacious vehicles", "Compassionate, trained chauffeurs", "Wheelchair accessible options", "Punctual hospital transfers"],
     reverse: true
   }
 ];
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Sezo Cabz Services",
+  itemListElement: services.map((s, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: s.title,
+    description: s.description,
+  })),
+};
+
 export default function ServicesPage() {
   return (
+    <>
+    <Script id="services-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
     <div className="pt-32 pb-24 min-h-screen bg-cream">
       <div className="container mx-auto px-4 md:px-8">
         
@@ -141,5 +170,6 @@ export default function ServicesPage() {
 
       </div>
     </div>
+    </>
   );
 }

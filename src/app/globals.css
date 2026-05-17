@@ -16,6 +16,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-cream);
     color: #111;
@@ -27,4 +30,9 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Modal: prevent browser-level scrollbar from appearing behind the overlay */
+body.modal-open {
+  overflow: hidden !important;
 }

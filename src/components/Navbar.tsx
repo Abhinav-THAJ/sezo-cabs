@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
@@ -36,10 +37,15 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2">
-          <span className={`text-2xl font-bold font-heading ${useDarkText ? 'text-black' : 'text-white'}`}>
-            Sezo Cabz
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo.svg"
+            alt="Sezo Cabz Logo"
+            width={180}
+            height={50}
+            priority
+            className={`transition-all duration-300 ${useDarkText ? 'brightness-0' : 'brightness-0 invert'}`}
+          />
         </Link>
 
         {/* Desktop Nav */}
