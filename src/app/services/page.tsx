@@ -87,7 +87,7 @@ export default function ServicesPage() {
             Our Expertise
           </span>
           <h1 className="text-5xl md:text-7xl font-bold font-heading mb-8 text-black leading-tight">
-            Premium Mobility <br /> For Every Occasion
+            Premium Mobility <br className="hidden md:block" /> For Every Occasion
           </h1>
           <p className="text-gray-600 text-xl leading-relaxed">
             At Sezo Cabz, we don't just provide a ride; we offer a refined travel experience. 
@@ -152,7 +152,7 @@ export default function ServicesPage() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-bold font-heading mb-8 leading-tight">
-              Ready for an Unforgettable <br /> Journey?
+              Ready for an Unforgettable <br className="hidden md:block" /> Journey?
             </h2>
             <p className="text-gray-400 text-xl mb-12 max-w-2xl mx-auto">
               Whether you're planning a trip or need an immediate ride, our team is ready to serve you 24/7.

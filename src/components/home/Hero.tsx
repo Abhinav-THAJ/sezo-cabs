@@ -72,7 +72,7 @@ export default function Hero() {
           transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-5xl md:text-7xl lg:text-8xl font-bold text-white font-heading leading-tight mb-8"
         >
-          Journey Beyond <br />
+          Journey Beyond <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-white">
             The Ordinary
           </span>

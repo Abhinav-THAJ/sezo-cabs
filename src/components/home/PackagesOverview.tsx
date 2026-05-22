@@ -3,11 +3,11 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MapPin, Clock, ChevronRight, Heart, Leaf, Mountain, Compass, Globe } from "lucide-react";
+import { MapPin, Clock, ChevronRight, Heart, Leaf, Mountain, Compass, Globe, Sun, Palmtree } from "lucide-react";
 import { tourPackages, type TourPackage } from "./tourData";
 import PackageDetailModal from "./PackageDetailModal";
 
-const icons = [Heart, Leaf, Mountain, Compass, Globe];
+const icons = [Heart, Leaf, Mountain, Compass, Globe, Sun, Palmtree];
 
 export default function PackagesOverview() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -28,7 +28,7 @@ export default function PackagesOverview() {
 
         <div className="container mx-auto px-4 md:px-8 relative">
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
             <motion.span
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ export default function PackagesOverview() {
               transition={{ delay: 0.08 }}
               className="text-4xl md:text-5xl font-bold font-heading text-gray-900 mb-5 leading-tight"
             >
-              Discover Kerala With Our <br />
+              Discover Kerala With Our <br className="hidden md:block" />
               <span style={{ color: "#b8960c" }}>Premium Packages</span>
             </motion.h2>
             <motion.p
@@ -60,30 +60,16 @@ export default function PackagesOverview() {
             </motion.p>
           </div>
 
-          {/* Cards Grid — 3 top + 2 bottom centred */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-7">
-            {tourPackages.slice(0, 3).map((pkg, i) => {
-              const Icon = icons[i];
+          {/* Unified Cards Grid — 2*3 on desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {tourPackages.map((pkg, i) => {
+              const Icon = icons[i % icons.length] || Globe;
               return (
                 <PackageCard
                   key={pkg.id}
                   pkg={pkg}
                   icon={<Icon className="w-4 h-4" />}
                   index={i}
-                  onClick={() => setSelectedPkg(pkg)}
-                />
-              );
-            })}
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-7 max-w-2xl lg:max-w-[calc(66.666%+14px)] mx-auto lg:mx-0 lg:ml-auto lg:mr-auto">
-            {tourPackages.slice(3).map((pkg, i) => {
-              const Icon = icons[3 + i];
-              return (
-                <PackageCard
-                  key={pkg.id}
-                  pkg={pkg}
-                  icon={<Icon className="w-4 h-4" />}
-                  index={3 + i}
                   onClick={() => setSelectedPkg(pkg)}
                 />
               );

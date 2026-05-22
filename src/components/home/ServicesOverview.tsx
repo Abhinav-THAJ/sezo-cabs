@@ -52,7 +52,7 @@ export default function ServicesOverview() {
     <>
       <section ref={containerRef} className="py-32 bg-cream relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-6 md:gap-8">
             <div className="max-w-2xl">
               <motion.span
                 initial={{ opacity: 0, x: -20 }}
@@ -69,7 +69,7 @@ export default function ServicesOverview() {
                 transition={{ delay: 0.1 }}
                 className="text-4xl md:text-6xl font-bold font-heading"
               >
-                Premium Services <br /> For Every Journey
+                Premium Services <br className="hidden md:block" /> For Every Journey
               </motion.h2>
             </div>
             <motion.div
