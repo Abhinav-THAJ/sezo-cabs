@@ -98,7 +98,7 @@ export const tourPackages: TourPackage[] = [
   },
   {
     id: "munnar-alappuzha",
-    title: "Munnar & Alappuzha Getaway",
+    title: "Munnar Getaway",
     duration: "3 Days / 2 Nights",
     destinations: ["Munnar", "Alappuzha"],
     tagline: "Hills meet the backwaters",
@@ -117,8 +117,8 @@ export const tourPackages: TourPackage[] = [
     highlights: ["Tea Estate Walk", "Mattupetty Dam", "Alleppey Backwaters", "Sunrise Point"],
     itinerary: [
       { day: "Day 1", title: "Arrive → Munnar", details: "Pickup from Kochi, scenic hill drive, check-in, Munnar town stroll, tea estate sunset." },
-      { day: "Day 2", title: "Munnar → Alappuzha", details: "Eravikulam Park, Attukal Falls, drive down to Alleppey, houseboat boarding, backwater cruise." },
-      { day: "Day 3", title: "Morning Cruise → Departure", details: "Sunrise on the backwaters, disembark, drop to Kochi airport." },
+      { day: "Day 2", title: "Munnar Site Seeing", details: "Eravikulam Park, Attukal Falls, drive down to Alleppey, houseboat boarding, backwater cruise." },
+      { day: "Day 3", title: "Munnar → Kochi Departure", details: "Sunrise on the backwaters, disembark, drop to Kochi airport." },
     ],
     gallery: ["/images/pkg_munnar_alappuzha.png", "/images/kerala_houseboat.png", "/images/hero_kerala.png"],
   },

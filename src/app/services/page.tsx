@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import ServiceActionButton from "./ServiceActionButton";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -135,13 +136,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
 
-                <Link 
-                  href="/book" 
-                  className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-gold transition-all group"
-                >
-                  Book this Service
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                <ServiceActionButton serviceTitle={service.title} />
               </div>
             </div>
           ))}

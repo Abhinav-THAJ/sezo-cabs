@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import BookPageClient from "./BookPageClient";
 
 export const metadata: Metadata = {
-  title: "Book a Cab & Driver Registration | Sezo Cabz",
+  title: "Book a Cab | Sezo Cabz",
   description:
-    "Book a premium cab or register as a driver with Sezo Cabz. Instant WhatsApp confirmation.",
+    "Book a premium cab with Sezo Cabz. Instant WhatsApp confirmation.",
 };
 
 export default function BookPage() {
