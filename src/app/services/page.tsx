@@ -22,42 +22,42 @@ const services = [
   {
     title: "Airport Transfers",
     description: "Start and end your journey with absolute comfort. Our chauffeurs monitor your flight status to ensure prompt pickups at Kochi, Trivandrum, and Calicut airports. We offer meet-and-greet services and assist with your luggage, providing a seamless transition to your destination.",
-    image: "/images/airport_pickup.png",
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop",
     features: ["Flight tracking & delay management", "Meet & Greet at arrivals", "Premium luggage assistance", "Available 24/7 at all major airports"],
     reverse: false
   },
   {
     title: "Local City Rides",
     description: "Navigate through the city in style and comfort. Whether it's a quick business meeting, a shopping spree, or an evening out, our local ride service ensures you arrive refreshed and on time. Experience the city with a professional chauffeur who knows the best routes.",
-    image: "/images/local_city_ride.png",
+    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop",
     features: ["Hourly & full-day rentals", "Knowledgeable local chauffeurs", "GPS-tracked premium fleet", "Flexible scheduling"],
     reverse: true
   },
   {
     title: "Kerala Tour Packages",
     description: "Experience the magic of God's Own Country with our curated tour packages. From the misty hills of Munnar to the tranquil backwaters of Alleppey, travel in ultimate luxury. Our knowledgeable chauffeurs double as local guides, ensuring an immersive and educational experience.",
-    image: "/images/kerala_houseboat.png",
+    image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2069&auto=format&fit=crop",
     features: ["Custom-tailored itineraries", "Expert local guide chauffeurs", "Luxury stays and experiences", "Multi-day sightseeing tours"],
     reverse: false
   },
   {
     title: "Outstation Travel",
     description: "Planning a trip outside the city? Our outstation service offers a safe and luxurious way to travel long distances across South India. Enjoy the landscape through large windows while we handle the driving. Ideal for family vacations or religious pilgrimages.",
-    image: "/images/hero_kerala.png",
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop",
     features: ["Transparent inter-state billing", "Experienced long-distance drivers", "Comfortable for long durations", "Round-the-clock availability"],
     reverse: true
   },
   {
     title: "Corporate Travel",
     description: "Elevate your business image with our dedicated corporate mobility solutions. We provide reliable and professional transportation for executives, clients, and partners. With streamlined billing and priority support, we manage your corporate fleet so you can focus on business.",
-    image: "/images/corporate_car.png",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop",
     features: ["Priority booking & 24/7 support", "Executive-class vehicles", "Detailed monthly reporting", "Corporate account management"],
     reverse: false
   },
   {
     title: "Medical Tourism",
     description: "Travel with peace of mind for your healthcare needs. We offer comfortable, sanitized, and spacious vehicles for patients and their families. Our compassionate chauffeurs are trained to ensure a smooth, stress-free journey to and from medical facilities.",
-    image: "/images/medical_tourism.png",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
     features: ["Sanitized, spacious vehicles", "Compassionate, trained chauffeurs", "Wheelchair accessible options", "Punctual hospital transfers"],
     reverse: true
   }

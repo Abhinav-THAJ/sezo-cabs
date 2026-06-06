@@ -97,9 +97,8 @@ export default function Hero() {
             href="/book"
             className="group relative inline-flex items-center justify-center px-8 py-4 text-sm font-semibold text-black bg-white rounded-full overflow-hidden transition-transform hover:scale-105"
           >
-            <span className="relative z-10">Book a Cab</span>
+            <span className="relative z-10 transition-colors duration-500 group-hover:text-white">Book a Cab</span>
             <div className="absolute inset-0 h-full w-full bg-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
-            <span className="relative z-10 hidden group-hover:block mix-blend-difference text-white">Book a Cab</span>
           </Link>
           
           <Link

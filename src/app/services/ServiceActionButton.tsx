@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import { useState } from "react";
@@ -30,9 +32,14 @@ export default function ServiceActionButton({ serviceTitle }: ServiceActionButto
     );
   }
 
+  let href = "/book";
+  if (serviceTitle === "Airport Transfers") href = "/book?service=Airport%20Pickup";
+  if (serviceTitle === "Local City Rides") href = "/book?service=Local%20Rides";
+  if (serviceTitle === "Outstation Travel") href = "/book?service=Outstation";
+
   return (
     <Link 
-      href="/book" 
+      href={href} 
       className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-gold transition-all group"
     >
       Book this Service

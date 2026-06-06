@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Car, Users, Calendar, Clock, Phone, ArrowRight, CheckCircle } from "lucide-react";
 
 type VehicleType = "Sedan" | "Ertiga + MUV" | "Innova" | "Innova Crysta" | "Innova Hycross" | "Tempo Traveller" | "Luxury Tempo" | "Urbania" | "Coach";
@@ -21,8 +22,82 @@ const VEHICLES: { name: VehicleType; seats: number; multiplier: number }[] = [
 
 const RIDE_TYPES: RideType[] = ["Airport Pickup", "Local Rides", "Outstation"];
 
+const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, rates: { days: string, km: number, rate: number }[] }> = {
+  "Sedan": {
+    title: "SEDAN TAXI RATES IN KERALA",
+    subtitle: "Swift Dzire, Toyota Etios Similar",
+    rates: [
+      { days: "1 night - 2 days", km: 160, rate: 4200 },
+      { days: "2 nights - 3 days", km: 300, rate: 6300 },
+      { days: "3 nights - 4 days", km: 400, rate: 8400 },
+      { days: "4 nights - 5 days", km: 500, rate: 10500 },
+      { days: "5 nights - 6 days", km: 600, rate: 12600 },
+      { days: "6 nights - 7 days", km: 700, rate: 14700 },
+      { days: "7 nights - 8 days", km: 800, rate: 16800 },
+      { days: "8 nights - 9 days", km: 900, rate: 18900 },
+      { days: "9 nights - 10 days", km: 1000, rate: 21000 },
+    ]
+  },
+  "Ertiga + MUV": {
+    title: "SUZUKI ERTIGA TAXI RATES IN KERALA",
+    subtitle: "Ertiga, XL6, Carens Similar",
+    rates: [
+      { days: "1 night - 2 days", km: 160, rate: 5000 },
+      { days: "2 nights - 3 days", km: 300, rate: 7500 },
+      { days: "3 nights - 4 days", km: 400, rate: 10000 },
+      { days: "4 nights - 5 days", km: 500, rate: 12500 },
+      { days: "5 nights - 6 days", km: 600, rate: 15000 },
+      { days: "6 nights - 7 days", km: 700, rate: 17500 },
+      { days: "7 nights - 8 days", km: 800, rate: 20000 },
+      { days: "8 nights - 9 days", km: 900, rate: 22500 },
+      { days: "9 nights - 10 days", km: 1000, rate: 25000 },
+    ]
+  },
+  "Innova": {
+    title: "TOYOTA INNOVA TAXI RATES IN KERALA",
+    subtitle: "Toyota Innova Similar",
+    rates: [
+      { days: "1 night - 2 days", km: 160, rate: 5600 },
+      { days: "2 nights - 3 days", km: 300, rate: 8400 },
+      { days: "3 nights - 4 days", km: 400, rate: 11200 },
+      { days: "4 nights - 5 days", km: 500, rate: 14000 },
+      { days: "5 nights - 6 days", km: 600, rate: 16800 },
+      { days: "6 nights - 7 days", km: 700, rate: 19600 },
+      { days: "7 nights - 8 days", km: 800, rate: 22400 },
+      { days: "8 nights - 9 days", km: 900, rate: 25200 },
+      { days: "9 nights - 10 days", km: 1000, rate: 28000 },
+    ]
+  },
+  "Innova Crysta": {
+    title: "TOYOTA INNOVA CRYSTA TAXI RATES IN KERALA",
+    subtitle: "Toyota Innova Crysta",
+    rates: [
+      { days: "1 night - 2 days", km: 160, rate: 6600 },
+      { days: "2 nights - 3 days", km: 300, rate: 9900 },
+      { days: "3 nights - 4 days", km: 400, rate: 13200 },
+      { days: "4 nights - 5 days", km: 500, rate: 16500 },
+      { days: "5 nights - 6 days", km: 600, rate: 19800 },
+      { days: "6 nights - 7 days", km: 700, rate: 23100 },
+      { days: "7 nights - 8 days", km: 800, rate: 26400 },
+      { days: "8 nights - 9 days", km: 900, rate: 29700 },
+      { days: "9 nights - 10 days", km: 1000, rate: 33000 },
+    ]
+  }
+};
+
 export default function BookingClient() {
-  const [rideType, setRideType] = useState<RideType>("Airport Pickup");
+  const searchParams = useSearchParams();
+  const initialRideType = searchParams.get("service") as RideType | null;
+
+  const [rideType, setRideType] = useState<RideType>(
+    initialRideType && RIDE_TYPES.includes(initialRideType) ? initialRideType : "Airport Pickup"
+  );
+
+  useEffect(() => {
+    if (initialRideType && RIDE_TYPES.includes(initialRideType)) {
+      setRideType(initialRideType);
+    }
+  }, [initialRideType]);
   const [vehicle, setVehicle] = useState<VehicleType>("Sedan");
   const [pickup, setPickup] = useState("");
   const [destination, setDestination] = useState("");
@@ -94,6 +169,45 @@ export default function BookingClient() {
                   ))}
                 </div>
               </motion.div>
+
+              {/* Outstation Rates Table */}
+              <AnimatePresence>
+                {rideType === "Outstation" && OUTSTATION_RATES[vehicle] && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0, y: -10 }}
+                    animate={{ opacity: 1, height: "auto", y: 0 }}
+                    exit={{ opacity: 0, height: 0, y: -10 }}
+                    className="bg-[#1a1a1a] text-white rounded-2xl shadow-xl overflow-hidden"
+                  >
+                    <div className="p-6 md:p-8">
+                      <div className="text-center mb-6">
+                        <h3 className="text-lg font-bold font-heading text-white tracking-wide">{OUTSTATION_RATES[vehicle].title}</h3>
+                        <p className="text-xs text-[#d4af37] uppercase tracking-widest mt-1">{OUTSTATION_RATES[vehicle].subtitle}</p>
+                      </div>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-sm text-left border-collapse min-w-[300px]">
+                          <thead className="text-gray-400 font-semibold border-b border-gray-700 uppercase text-[10px] tracking-wider">
+                            <tr>
+                              <th className="pb-3 px-2 font-medium">Number of days</th>
+                              <th className="pb-3 px-2 font-medium text-center">Km</th>
+                              <th className="pb-3 px-2 font-medium text-right">AC Rate</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-gray-800">
+                            {OUTSTATION_RATES[vehicle].rates.map((rate, i) => (
+                              <tr key={i} className="hover:bg-white/5 transition-colors">
+                                <td className="py-3 px-2 text-gray-200">{rate.days}</td>
+                                <td className="py-3 px-2 text-gray-400 text-center">{rate.km}</td>
+                                <td className="py-3 px-2 text-[#d4af37] font-semibold text-right">₹{rate.rate}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Date, Time, Passengers */}
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}

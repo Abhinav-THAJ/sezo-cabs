@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Suspense } from "react";
 import BookingClient from "./BookingClient";
 
 export default function BookPageClient() {
@@ -31,7 +32,9 @@ export default function BookPageClient() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}
         >
-          <BookingClient />
+          <Suspense fallback={<div className="text-center py-20">Loading booking form...</div>}>
+            <BookingClient />
+          </Suspense>
         </motion.div>
 
       </div>
