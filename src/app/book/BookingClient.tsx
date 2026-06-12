@@ -82,6 +82,82 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, rates:
       { days: "8 nights - 9 days", km: 900, rate: 29700 },
       { days: "9 nights - 10 days", km: 1000, rate: 33000 },
     ]
+  },
+  "Innova Hycross": {
+    title: "TOYOTA INNOVA HYCROSS PACKAGE RATES",
+    subtitle: "Extra KM: ₹24/KM",
+    rates: [
+      { days: "1 Day", km: 100, rate: 4000 },
+      { days: "2 Days", km: 200, rate: 8000 },
+      { days: "3 Days", km: 300, rate: 12000 },
+      { days: "4 Days", km: 400, rate: 16000 },
+      { days: "5 Days", km: 500, rate: 20000 },
+      { days: "6 Days", km: 600, rate: 24000 },
+      { days: "7 Days", km: 700, rate: 28000 },
+      { days: "8 Days", km: 800, rate: 32000 },
+      { days: "9 Days", km: 900, rate: 36000 },
+      { days: "10 Days", km: 1000, rate: 40000 },
+    ]
+  },
+  "Urbania": {
+    title: "FORCE URBANIA (12 SEATER) PACKAGE RATES",
+    subtitle: "Extra KM: ₹32/KM",
+    rates: [
+      { days: "1 night - 2 days", km: 160, rate: 15000 },
+      { days: "2 nights - 3 days", km: 300, rate: 22500 },
+      { days: "3 nights - 4 days", km: 400, rate: 30000 },
+      { days: "4 nights - 5 days", km: 500, rate: 37500 },
+      { days: "5 nights - 6 days", km: 600, rate: 45000 },
+      { days: "6 nights - 7 days", km: 700, rate: 52500 },
+      { days: "7 nights - 8 days", km: 800, rate: 60000 },
+      { days: "8 nights - 9 days", km: 900, rate: 67500 },
+      { days: "9 nights - 10 days", km: 1000, rate: 75000 },
+    ]
+  },
+  "Tempo Traveller": {
+    title: "TEMPO TRAVELLER (12 SEATER) PACKAGE RATES",
+    subtitle: "Extra KM: ₹23/KM",
+    rates: [
+      { days: "1 night - 2 days", km: 160, rate: 7800 },
+      { days: "2 nights - 3 days", km: 300, rate: 11700 },
+      { days: "3 nights - 4 days", km: 400, rate: 15600 },
+      { days: "4 nights - 5 days", km: 500, rate: 19500 },
+      { days: "5 nights - 6 days", km: 600, rate: 23400 },
+      { days: "6 nights - 7 days", km: 700, rate: 27300 },
+      { days: "7 nights - 8 days", km: 800, rate: 31200 },
+      { days: "8 nights - 9 days", km: 900, rate: 35100 },
+      { days: "9 nights - 10 days", km: 1000, rate: 39000 },
+    ]
+  },
+  "Luxury Tempo": {
+    title: "LUXURY TEMPO (17 SEATER) PACKAGE RATES",
+    subtitle: "Extra KM: ₹25/KM",
+    rates: [
+      { days: "1 night - 2 days", km: 160, rate: 8600 },
+      { days: "2 nights - 3 days", km: 300, rate: 12900 },
+      { days: "3 nights - 4 days", km: 400, rate: 17200 },
+      { days: "4 nights - 5 days", km: 500, rate: 21500 },
+      { days: "5 nights - 6 days", km: 600, rate: 25800 },
+      { days: "6 nights - 7 days", km: 700, rate: 30100 },
+      { days: "7 nights - 8 days", km: 800, rate: 34400 },
+      { days: "8 nights - 9 days", km: 900, rate: 38700 },
+      { days: "9 nights - 10 days", km: 1000, rate: 43000 },
+    ]
+  },
+  "Coach": {
+    title: "COACH (49 SEATER) PACKAGE RATES",
+    subtitle: "Extra KM: ₹52/KM",
+    rates: [
+      { days: "1 night - 2 days", km: 160, rate: 26000 },
+      { days: "2 nights - 3 days", km: 300, rate: 39000 },
+      { days: "3 nights - 4 days", km: 400, rate: 52000 },
+      { days: "4 nights - 5 days", km: 500, rate: 65000 },
+      { days: "5 nights - 6 days", km: 600, rate: 78000 },
+      { days: "6 nights - 7 days", km: 700, rate: 91000 },
+      { days: "7 nights - 8 days", km: 800, rate: 104000 },
+      { days: "8 nights - 9 days", km: 900, rate: 117000 },
+      { days: "9 nights - 10 days", km: 1000, rate: 130000 },
+    ]
   }
 };
 
@@ -164,7 +240,6 @@ export default function BookingClient() {
                     <button key={v.name} type="button" onClick={() => setVehicle(v.name)}
                       className={`flex flex-col items-start px-4 py-3 rounded-xl border text-left transition-all ${vehicle === v.name ? "border-[#d4af37] bg-[#d4af37]/10 shadow-sm" : "border-gray-200 bg-white hover:border-gray-300"}`}>
                       <span className={`text-sm font-semibold ${vehicle === v.name ? "text-[#b8960c]" : "text-gray-800"}`}>{v.name}</span>
-                      <span className="text-xs text-gray-400 mt-0.5">Up to {v.seats} seats</span>
                     </button>
                   ))}
                 </div>
