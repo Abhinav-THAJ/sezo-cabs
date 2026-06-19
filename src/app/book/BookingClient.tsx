@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Car, Users, Calendar, Clock, Phone, ArrowRight, CheckCircle } from "lucide-react";
+import { MapPin, Car, Users, Calendar, Clock, Phone, ArrowRight, CheckCircle, Info } from "lucide-react";
 
 type VehicleType = "Sedan" | "Ertiga + MUV" | "Innova" | "Innova Crysta" | "Innova Hycross" | "Tempo Traveller" | "Luxury Tempo" | "Urbania" | "Coach";
 type RideType = "Airport Pickup" | "Local Rides" | "Outstation";
@@ -278,6 +278,12 @@ export default function BookingClient() {
                             ))}
                           </tbody>
                         </table>
+                      </div>
+                      <div className="mt-5 bg-[#d4af37]/10 border border-[#d4af37]/20 rounded-xl p-4 flex items-start gap-3">
+                        <Info className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
+                        <p className="text-xs text-gray-300 leading-relaxed text-left">
+                          <span className="font-semibold text-white">Note:</span> Fare rates are subject to change depending on operational factors and prevailing circumstances.
+                        </p>
                       </div>
                     </div>
                   </motion.div>
