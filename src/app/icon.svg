@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCEBAF" />
+      <stop offset="40%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#9C7E31" />
+    </linearGradient>
+  </defs>
+  
+  <g transform="translate(0, 10) scale(0.94)">
+    <!-- Elegant Premium Sedan Taxi Silhouette with negative space windows -->
+    <path d="M 4 40 
+             L 4 34 
+             C 4 30, 6 28, 10 28 
+             L 14 28 
+             C 18 16, 24 12, 28 12 
+             L 40 12 
+             C 46 12, 50 24, 52 28 
+             L 60 28 
+             C 64 28, 64 32, 64 34 
+             L 64 40 
+             Z
+             M 18 28 
+             C 22 18, 26 16, 29 16 
+             L 39 16 
+             C 43 16, 46 24, 49 28 
+             Z" 
+          fill="url(#gold)" fill-rule="evenodd" />
+
+    <!-- B-Pillar (separating the front and rear windows) -->
+    <rect x="33" y="16" width="2.5" height="12" fill="url(#gold)" />
+
+    <!-- Wheels (Elegant alloys) -->
+    <circle cx="15" cy="40" r="7.5" fill="#1a1a1a" />
+    <circle cx="15" cy="40" r="3.5" fill="url(#gold)" />
+    <circle cx="15" cy="40" r="1.5" fill="#1a1a1a" />
+    
+    <circle cx="53" cy="40" r="7.5" fill="#1a1a1a" />
+    <circle cx="53" cy="40" r="3.5" fill="url(#gold)" />
+    <circle cx="53" cy="40" r="1.5" fill="#1a1a1a" />
+
+    <!-- Minimalist Taxi Roof Sign -->
+    <path d="M 31 12 L 32 8 L 36 8 L 37 12 Z" fill="#1a1a1a" />
+    <rect x="33" y="9" width="3" height="2" rx="0.5" fill="url(#gold)" />
+    
+    <!-- Tail light subtle detail -->
+    <path d="M 4 34 L 6 34 L 6 38 L 4 38 Z" fill="#FF3B30" opacity="0.9" />
+    <!-- Headlight subtle detail -->
+    <path d="M 64 34 L 62 34 L 62 38 L 64 38 Z" fill="#FFFFFF" opacity="0.9" />
+  </g>
+</svg>

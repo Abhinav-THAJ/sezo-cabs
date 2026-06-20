@@ -22,10 +22,19 @@ const VEHICLES: { name: VehicleType; seats: number; multiplier: number }[] = [
 
 const RIDE_TYPES: RideType[] = ["Airport Pickup", "Local Rides", "Outstation"];
 
-const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, rates: { days: string, km: number, rate: number }[] }> = {
+const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, notes?: string[], rates: { days: string, km: number, rate: number }[] }> = {
   "Sedan": {
     title: "SEDAN TAXI RATES IN KERALA",
     subtitle: "Swift Dzire, Toyota Etios Similar",
+    notes: [
+      "Suitable for maximum 3 adult passengers",
+      "Above rates are inclusive of driver charges and fuel expenses",
+      "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
+      "Rs 15/- will be applicable for each extra Km for A/c cab.",
+      "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
+      "Above rates are subjected to change based on availability/changes in fuel rates.",
+      "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
+    ],
     rates: [
       { days: "1 night - 2 days", km: 160, rate: 4200 },
       { days: "2 nights - 3 days", km: 300, rate: 6300 },
@@ -41,6 +50,15 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, rates:
   "Ertiga + MUV": {
     title: "SUZUKI ERTIGA TAXI RATES IN KERALA",
     subtitle: "Ertiga, XL6, Carens Similar",
+    notes: [
+      "Suitable for maximum 5 adult passengers",
+      "Above rates are inclusive of driver charges and fuel expenses",
+      "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
+      "Rs 18/- will be applicable for each extra Km for A/c cab.",
+      "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
+      "Above rates are subjected to change based on availability/changes in fuel rates.",
+      "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
+    ],
     rates: [
       { days: "1 night - 2 days", km: 160, rate: 5000 },
       { days: "2 nights - 3 days", km: 300, rate: 7500 },
@@ -56,6 +74,15 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, rates:
   "Innova": {
     title: "TOYOTA INNOVA TAXI RATES IN KERALA",
     subtitle: "Toyota Innova Similar",
+    notes: [
+      "Suitable for maximum 6 adult passengers",
+      "Above rates are inclusive of driver charges and fuel expenses",
+      "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
+      "Rs 20/- will be applicable for each extra Km for A/c cab.",
+      "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
+      "Above rates are subjected to change based on availability/changes in fuel rates.",
+      "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
+    ],
     rates: [
       { days: "1 night - 2 days", km: 160, rate: 5600 },
       { days: "2 nights - 3 days", km: 300, rate: 8400 },
@@ -71,6 +98,15 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, rates:
   "Innova Crysta": {
     title: "TOYOTA INNOVA CRYSTA TAXI RATES IN KERALA",
     subtitle: "Toyota Innova Crysta",
+    notes: [
+      "Suitable for maximum 6 adult passengers",
+      "Above rates are inclusive of driver charges and fuel expenses",
+      "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
+      "Rs 22/- will be applicable for each extra Km for A/c cab.",
+      "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
+      "Above rates are subjected to change based on availability/changes in fuel rates.",
+      "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
+    ],
     rates: [
       { days: "1 night - 2 days", km: 160, rate: 6600 },
       { days: "2 nights - 3 days", km: 300, rate: 9900 },
@@ -86,6 +122,15 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, rates:
   "Innova Hycross": {
     title: "TOYOTA INNOVA HYCROSS PACKAGE RATES",
     subtitle: "Extra KM: ₹24/KM",
+    notes: [
+      "Suitable for maximum 6 adult passengers",
+      "Above rates are inclusive of driver charges and fuel expenses",
+      "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
+      "Rs 22/- will be applicable for each extra Km for A/c cab.",
+      "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
+      "Above rates are subjected to change based on availability/changes in fuel rates.",
+      "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
+    ],
     rates: [
       { days: "1 Day", km: 100, rate: 4000 },
       { days: "2 Days", km: 200, rate: 8000 },
@@ -102,6 +147,14 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, rates:
   "Urbania": {
     title: "FORCE URBANIA (12 SEATER) PACKAGE RATES",
     subtitle: "Extra KM: ₹32/KM",
+    notes: [
+      "Above rates are inclusive of driver charges and fuel expenses",
+      "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
+      "Rs 30/- will be applicable for each extra Km for A/c cab.",
+      "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
+      "Above rates are subjected to change based on availability/changes in fuel rates.",
+      "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
+    ],
     rates: [
       { days: "1 night - 2 days", km: 160, rate: 15000 },
       { days: "2 nights - 3 days", km: 300, rate: 22500 },
@@ -117,6 +170,14 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, rates:
   "Tempo Traveller": {
     title: "TEMPO TRAVELLER (12 SEATER) PACKAGE RATES",
     subtitle: "Extra KM: ₹23/KM",
+    notes: [
+      "Above rates are inclusive of driver charges and fuel expenses",
+      "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
+      "Rs 24/- will be applicable for each extra Km for A/c cab.",
+      "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
+      "Above rates are subjected to change based on availability/changes in fuel rates.",
+      "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
+    ],
     rates: [
       { days: "1 night - 2 days", km: 160, rate: 7800 },
       { days: "2 nights - 3 days", km: 300, rate: 11700 },
@@ -132,6 +193,14 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, rates:
   "Luxury Tempo": {
     title: "LUXURY TEMPO (17 SEATER) PACKAGE RATES",
     subtitle: "Extra KM: ₹25/KM",
+    notes: [
+      "Above rates are inclusive of driver charges and fuel expenses",
+      "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
+      "Rs 25/- will be applicable for each extra Km for A/c cab.",
+      "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
+      "Above rates are subjected to change based on availability/changes in fuel rates.",
+      "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
+    ],
     rates: [
       { days: "1 night - 2 days", km: 160, rate: 8600 },
       { days: "2 nights - 3 days", km: 300, rate: 12900 },
@@ -147,6 +216,14 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, rates:
   "Coach": {
     title: "COACH (49 SEATER) PACKAGE RATES",
     subtitle: "Extra KM: ₹52/KM",
+    notes: [
+      "Above rates are inclusive of driver charges and fuel expenses",
+      "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
+      "Rs 35/- will be applicable for each extra Km for A/c cab.",
+      "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
+      "Above rates are subjected to change based on availability/changes in fuel rates.",
+      "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
+    ],
     rates: [
       { days: "1 night - 2 days", km: 160, rate: 26000 },
       { days: "2 nights - 3 days", km: 300, rate: 39000 },
@@ -281,9 +358,18 @@ export default function BookingClient() {
                       </div>
                       <div className="mt-5 bg-[#d4af37]/10 border border-[#d4af37]/20 rounded-xl p-4 flex items-start gap-3">
                         <Info className="w-5 h-5 text-[#d4af37] shrink-0 mt-0.5" />
-                        <p className="text-xs text-gray-300 leading-relaxed text-left">
-                          <span className="font-semibold text-white">Note:</span> Fare rates are subject to change depending on operational factors and prevailing circumstances.
-                        </p>
+                        <div className="text-xs text-gray-300 leading-relaxed text-left">
+                          <span className="font-semibold text-white block mb-1">Note:</span>
+                          {OUTSTATION_RATES[vehicle].notes ? (
+                            <ul className="list-disc pl-4 space-y-1">
+                              {OUTSTATION_RATES[vehicle].notes?.map((n, idx) => (
+                                <li key={idx}>{n}</li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p>Fare rates are subject to change depending on operational factors and prevailing circumstances.</p>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </motion.div>

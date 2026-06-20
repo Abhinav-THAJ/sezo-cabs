@@ -39,12 +39,12 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/logo.svg"
+            src="/images/logo.png"
             alt="Sezo Cabz Logo"
-            width={180}
-            height={50}
+            width={70}
+            height={70}
             priority
-            className={`transition-all duration-300 ${useDarkText ? 'brightness-0' : 'brightness-0 invert'}`}
+            className="transition-all duration-300 object-contain"
           />
         </Link>
 

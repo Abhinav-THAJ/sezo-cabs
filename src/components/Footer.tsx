@@ -10,11 +10,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-1">
             <Image
-              src="/images/logo.svg"
+              src="/images/logo.png"
               alt="Sezo Cabz Logo"
-              width={160}
-              height={45}
-              className="brightness-0 invert mb-6"
+              width={80}
+              height={80}
+              className="brightness-0 invert mb-6 object-contain"
             />
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Experience the pinnacle of luxury travel in Kerala. Premium cabs, professional drivers, and unforgettable journeys.
