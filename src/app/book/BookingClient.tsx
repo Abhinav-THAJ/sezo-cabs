@@ -102,7 +102,7 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, notes?
       "Suitable for maximum 6 adult passengers",
       "Above rates are inclusive of driver charges and fuel expenses",
       "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
-      "Rs 22/- will be applicable for each extra Km for A/c cab.",
+      "Rs 23/- will be applicable for each extra Km for A/c cab.",
       "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
       "Above rates are subjected to change based on availability/changes in fuel rates.",
       "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
@@ -126,7 +126,7 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, notes?
       "Suitable for maximum 6 adult passengers",
       "Above rates are inclusive of driver charges and fuel expenses",
       "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
-      "Rs 22/- will be applicable for each extra Km for A/c cab.",
+      "Rs 24/- will be applicable for each extra Km for A/c cab.",
       "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
       "Above rates are subjected to change based on availability/changes in fuel rates.",
       "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
@@ -150,7 +150,7 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, notes?
     notes: [
       "Above rates are inclusive of driver charges and fuel expenses",
       "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
-      "Rs 30/- will be applicable for each extra Km for A/c cab.",
+      "Rs 32/- will be applicable for each extra Km for A/c cab.",
       "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
       "Above rates are subjected to change based on availability/changes in fuel rates.",
       "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
@@ -173,7 +173,7 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, notes?
     notes: [
       "Above rates are inclusive of driver charges and fuel expenses",
       "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
-      "Rs 24/- will be applicable for each extra Km for A/c cab.",
+      "Rs 23/- will be applicable for each extra Km for A/c cab.",
       "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
       "Above rates are subjected to change based on availability/changes in fuel rates.",
       "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
@@ -219,7 +219,7 @@ const OUTSTATION_RATES: Record<string, { title: string, subtitle: string, notes?
     notes: [
       "Above rates are inclusive of driver charges and fuel expenses",
       "Additional Charges: Parking Charges, Toll Charges, Interstate Permit Charges.",
-      "Rs 35/- will be applicable for each extra Km for A/c cab.",
+      "Rs 52/- will be applicable for each extra Km for A/c cab.",
       "Above rates are not applicable during festive/season days such as Diwali holidays & Christmas holidays.",
       "Above rates are subjected to change based on availability/changes in fuel rates.",
       "Km. will be calculated from Cochin Airport to Cochin Airport basis only."
