@@ -264,7 +264,7 @@ export default function BookingClient() {
   const handleBook = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = `*New Cab Booking — Sezo Cabz* 🚖\n──────────────────────────────\n*Name:* ${name}\n*Phone:* ${phone}\n*Ride Type:* ${rideType}\n*Pickup:* ${pickup || "—"}\n*Destination:* ${destination || "—"}\n*Vehicle:* ${vehicle}\n*Passengers:* ${passengers}\n*Date & Time:* ${date || "—"} at ${time || "—"}\n*Notes:* ${notes || "None"}`.trim();
-    window.open(`https://wa.me/919400380868?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/917306338989?text=${encodeURIComponent(msg)}`, "_blank");
   };
 
   return (

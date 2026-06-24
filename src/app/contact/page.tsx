@@ -23,7 +23,7 @@ export default function ContactPage() {
     `.trim();
 
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/919400380868?text=${encodedMessage}`, "_blank");
+    window.open(`https://wa.me/917306338989?text=${encodedMessage}`, "_blank");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -58,8 +58,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="text-sm text-gray-400 mb-1">Phone Number</h4>
-                  <p className="text-lg font-medium">+91 94003 80868</p>
-                  <p className="text-lg font-medium">+91 98765 43210</p>
+                  <p className="text-lg font-medium">+91 73063 38989</p>
                 </div>
               </div>
 

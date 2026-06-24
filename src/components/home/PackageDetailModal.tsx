@@ -21,7 +21,7 @@ interface PackageDetailModalProps {
   onClose: () => void;
 }
 
-const WHATSAPP_NUMBER = "919876543210";
+const WHATSAPP_NUMBER = "917306338989";
 
 export default function PackageDetailModal({ pkg, onClose }: PackageDetailModalProps) {
   const scrollRef = useRef<HTMLDivElement>(null);

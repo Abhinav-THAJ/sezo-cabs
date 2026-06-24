@@ -39,7 +39,7 @@ export default function DriverRegistrationForm() {
       `📎 License & RC Book photos will be sent separately in this chat.`,
     ].join("\n");
 
-    window.open(`https://wa.me/919400380868?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/917306338989?text=${encodeURIComponent(msg)}`, "_blank");
     setSubmitted(true);
   };
 

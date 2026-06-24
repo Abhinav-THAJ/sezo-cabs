@@ -5,6 +5,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 const sora = Sora({ variable: "--font-sora", subsets: ["latin"], display: "swap" });
@@ -61,7 +62,7 @@ const jsonLd = {
   description:
     "Premium cab and tour package service in Kerala, India. Offering airport transfers, local rides, outstation travel, and curated Kerala tour packages.",
   url: SITE_URL,
-  telephone: "+919400380868",
+  telephone: "+917306338989",
   email: "info@sezocabz.com",
   address: {
     "@type": "PostalAddress",
@@ -77,6 +78,7 @@ const jsonLd = {
     { "@type": "City", name: "Kochi" },
     { "@type": "City", name: "Munnar" },
     { "@type": "City", name: "Alappuzha" },
+    { "@type": "City", name: "Wayanad" },
     { "@type": "City", name: "Wayanad" },
   ],
   priceRange: "₹₹",
@@ -111,6 +113,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
+          <WhatsAppButton />
         </SmoothScroll>
       </body>
     </html>
