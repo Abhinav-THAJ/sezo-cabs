@@ -10,11 +10,21 @@ export default function WhatsAppButton() {
 
   useEffect(() => {
     setIsMounted(true);
+    
     // Show the tooltip after 3 seconds to attract attention
-    const timer = setTimeout(() => {
+    const showTimer = setTimeout(() => {
       setShowTooltip(true);
     }, 3000);
-    return () => clearTimeout(timer);
+
+    // Automatically hide the tooltip after 9 seconds (3s delay + 6s display time)
+    const hideTimer = setTimeout(() => {
+      setShowTooltip(false);
+    }, 9000);
+
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+    };
   }, []);
 
   if (!isMounted) return null;
