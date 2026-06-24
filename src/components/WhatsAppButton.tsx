@@ -15,10 +15,10 @@ export default function WhatsAppButton() {
       setShowTooltip(true);
     }, 1500);
 
-    // Automatically hide the tooltip after 6 seconds of display (7.5 seconds total)
+    // Automatically hide the tooltip after 4 seconds of display (5.5 seconds total)
     const hideTimer = setTimeout(() => {
       setShowTooltip(false);
-    }, 7500);
+    }, 5500);
 
     return () => {
       clearTimeout(showTimer);
